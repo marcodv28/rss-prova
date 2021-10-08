@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "notizieRSS",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
