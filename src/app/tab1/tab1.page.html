@@ -13,7 +13,17 @@
     </ion-toolbar>
   </ion-header>
 
-  <ul>
-    <li *ngFor="let item of newsItems"> {{item.title}} </li>
-  </ul>
+  <ion-card class='news' *ngFor="let item of newsItems">
+    <ion-card-header>
+      <ion-card-subtitle> {{item.pubDate}} </ion-card-subtitle>
+      <ion-card-title> {{item.title}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p> {{item.description}} </p>
+    </ion-card-content>
+    <ion-chip>
+      <a [href]="item.link"> Leggi l'articolo completo </a>
+    </ion-chip>
+  </ion-card>
+
 </ion-content>
