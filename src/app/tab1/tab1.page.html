@@ -14,16 +14,20 @@
   </ion-header>
 
   <ion-card class='news' *ngFor="let item of newsItems">
+    <ion-img src="https://st.ilfattoquotidiano.it/wp-content/uploads/2016/09/sole24ore-675.jpg"></ion-img>
     <ion-card-header>
-      <ion-card-subtitle> {{item.pubDate}} </ion-card-subtitle>
+      <ion-card-subtitle class="ion-text-end ion-margin-top ion-margin-bottom"> {{item.pubDate}} </ion-card-subtitle>
       <ion-card-title> {{item.title}} </ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <p> {{item.description}} </p>
     </ion-card-content>
-    <ion-chip>
-      <a [href]="item.link"> Leggi l'articolo completo </a>
-    </ion-chip>
+    <div class="button-container">
+      <ion-chip class="ion-padding ion-margin-bottom">
+        <a [href]="item.link"> Leggi l'articolo completo </a>
+      </ion-chip>
+    </div>
+    
   </ion-card>
 
 </ion-content>
