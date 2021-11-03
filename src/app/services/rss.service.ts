@@ -41,27 +41,29 @@ export class RssService {
   }
 
   /*public getNews() : NewsRss{
-     this.xmlToJson(
+    this.xmlToJson(
             this.http.get(this.rssUrl, {observe: 'body', responseType: "text"})
           );
     console.log(this.rssData);
     return this.rssData;
   }
 
-  private xmlToJson(xmlData : Observable<String>){
-    
-    xmlData.subscribe((data) => {
+  private async xmlToJson(xmlData : Observable<String>){
+    let i = 0;
+    await xmlData.subscribe((data) => {
+      console.log(i++);
       let parseString = xml2js.parseString;
       parseString(data, (err, result:NewsRss) => {
         if(err){
           console.warn('ERRORE RSS\n' + err + '\n' + result);
         }else{
           this.rssData = result;
+          console.log(result);
         }         
       });
     });
-
-  }*/
+     
+  }  */
 
 
 
