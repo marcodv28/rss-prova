@@ -1,3 +1,20 @@
-<p>
-  {{items}}
-</p>
+<swiper [config]="mainConfig" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+  <ng-template swiperSlide *ngFor="let item of items"> 
+    <ion-card class='news'>
+      <ion-img src="https://st.ilfattoquotidiano.it/wp-content/uploads/2016/09/sole24ore-675.jpg"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle class="ion-text-end ion-margin-top ion-margin-bottom"> {{item.pubDate}} </ion-card-subtitle>
+        <ion-card-title> {{item.title}} </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p> {{item.description}} </p>
+      </ion-card-content>
+      <div class="button-container">
+        <ion-chip class="ion-padding ion-margin-bottom">
+          <a [href]="item.link"> Leggi l'articolo completo </a>
+        </ion-chip>
+      </div>
+      
+    </ion-card>  
+  </ng-template>
+</swiper>

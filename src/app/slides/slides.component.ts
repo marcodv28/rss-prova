@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 //import Swiper core and required modules
-import SwiperCore from 'swiper';
+import SwiperCore, { SwiperOptions } from 'swiper';
 
 @Component({
   selector: 'app-slides',
@@ -9,6 +9,9 @@ import SwiperCore from 'swiper';
   styleUrls: ['./slides.component.scss'],
 })
 export class SlidesComponent implements OnInit {
+  mainConfig: SwiperOptions = {
+    slidesPerView: 1,
+  }
 
   constructor() { }
 

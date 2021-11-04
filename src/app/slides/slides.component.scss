@@ -1,0 +1,11 @@
+ion-card{
+    div.button-container{
+        display: flex;
+        justify-content: center;
+        ion-chip{
+            a{
+                text-decoration: none;
+            }
+        } 
+    }
+}

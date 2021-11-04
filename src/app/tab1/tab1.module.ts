@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 
 //swiper
+import { SwiperModule } from 'swiper/angular';
 import { SlidesComponent } from '../slides/slides.component';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { SlidesComponent } from '../slides/slides.component';
     FormsModule,
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
+    SwiperModule
   ],
   declarations: [
     Tab1Page, 
