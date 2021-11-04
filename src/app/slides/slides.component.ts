@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 //import Swiper core and required modules
 import SwiperCore from 'swiper';
@@ -11,6 +11,8 @@ import SwiperCore from 'swiper';
 export class SlidesComponent implements OnInit {
 
   constructor() { }
+
+  @Input() items
 
   ngOnInit() {}
 
