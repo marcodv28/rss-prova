@@ -1,7 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 //import Swiper core and required modules
-import SwiperCore, { SwiperOptions } from 'swiper';
+import SwiperCore, { SwiperOptions, Pagination } from 'swiper';
+
+SwiperCore.use([
+  Pagination
+]);
 
 @Component({
   selector: 'app-slides',
@@ -11,6 +15,9 @@ import SwiperCore, { SwiperOptions } from 'swiper';
 export class SlidesComponent implements OnInit {
   mainConfig: SwiperOptions = {
     slidesPerView: 1,
+    pagination: {
+      dynamicBullets: true
+    }
   }
 
   constructor() { }

@@ -1,11 +1,19 @@
-ion-card{
-    div.button-container{
-        display: flex;
-        justify-content: center;
-        ion-chip{
-            a{
-                text-decoration: none;
-            }
-        } 
+swiper{
+    height: 100%;
+    ion-card{
+        height: 92%;
+        div.button-container{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            ion-chip{
+                a{
+                    text-decoration: none;
+                }
+            } 
+        }
     }
 }
+
