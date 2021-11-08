@@ -15,11 +15,9 @@ SwiperCore.use([
   styleUrls: ['./slides.component.scss'],
 })
 export class SlidesComponent implements OnInit {
-  backgroundColor = 'pink';
-
   mainConfig: SwiperOptions = {
     slidesPerView: 1,
-    spaceBetween: 100,
+    /*spaceBetween: 100,*/
     pagination: {
       dynamicBullets: true
     },
@@ -40,9 +38,9 @@ export class SlidesComponent implements OnInit {
     console.log(swiper);
   }
   onSlideChange(){
-    this.backgroundColor = this.randomColor();
-    document.getElementById('swiper-container').style.backgroundColor = this.backgroundColor;
-    console.log('background: ' + this.backgroundColor);
+    const backgroundColor = this.randomColor();
+    document.getElementById('swiper-container').style.backgroundColor = backgroundColor;
+    console.log('background: ' + backgroundColor);
   }
 
   private randomColor() : string{
