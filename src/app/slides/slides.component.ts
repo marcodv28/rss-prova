@@ -24,7 +24,7 @@ export class SlidesComponent implements OnInit {
     effect: 'cards',
     autoplay: {
       delay: 8000,    //millisecondi
-      disableOnInteraction: false
+      disableOnInteraction: true
     }
   }
 

@@ -1,6 +1,5 @@
 #swiper-container{
     height: 100%;
-    overflow-y: auto;
     background-color: var(--ion-color-secondary-tint);
     transition: background-color 1s;
 }
@@ -12,9 +11,15 @@ swiper{
     width: 95%;
     ion-card{
         height: 92%;
+        display: flex;
+        flex-direction: column;
+        ion-card-content{
+            flex-grow: 1;
+            overflow-y: scroll;
+        }
         div.button-container{
-            position: absolute;
-            bottom: 0;
+            //position: absolute;
+            //bottom: 0;
             width: 100%;
             display: flex;
             justify-content: center;
