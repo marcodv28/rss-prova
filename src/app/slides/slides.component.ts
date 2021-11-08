@@ -49,11 +49,11 @@ export class SlidesComponent implements OnInit {
   apriArticolo(url:string){
     this.articoloAperto = url;
     console.log('articolo aperto: \n' + this.articoloAperto);    
-    document.getElementById('leggi-articolo-container').style.display = 'flex';
+    document.getElementById('leggi-articolo-container').style.height = '75vh';
   }
 
   chiudiArticolo(){
-    document.getElementById('leggi-articolo-container').style.display = 'none';
+    document.getElementById('leggi-articolo-container').style.height = '0';
   }
 
   private randomColor() : string{
