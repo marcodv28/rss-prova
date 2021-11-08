@@ -5,8 +5,8 @@ import SwiperCore, { SwiperOptions, Pagination, EffectCards, Autoplay} from 'swi
 
 SwiperCore.use([
   Pagination,
-  EffectCards,
-  Autoplay
+  EffectCards
+  ///Autoplay
 ]);
 
 @Component({
@@ -22,10 +22,10 @@ export class SlidesComponent implements OnInit {
       dynamicBullets: true
     },
     effect: 'cards',
-    autoplay: {
+    /*autoplay: {
       delay: 8000,    //millisecondi
       disableOnInteraction: true
-    }
+    }*/
   }
 
   constructor() { }
