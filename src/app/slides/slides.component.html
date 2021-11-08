@@ -3,7 +3,7 @@
         (swiper)="onSwiper($event)" 
         (slideChange)="onSlideChange()" >
     <ng-template swiperSlide *ngFor="let item of items"> 
-      <ion-card class='news'>
+      <ion-card class='news' >
         <ion-img src="https://st.ilfattoquotidiano.it/wp-content/uploads/2016/09/sole24ore-675.jpg"></ion-img>
         <ion-card-header>
           <ion-card-subtitle class="ion-text-end ion-margin-top ion-margin-bottom"> {{item.pubDate}} </ion-card-subtitle>
@@ -27,8 +27,8 @@
             </p>
         </ion-card-content>
         <div class="button-container">
-          <ion-chip class="ion-padding ion-margin-bottom">
-            <a [href]="item.link"> Leggi l'articolo completo </a>
+          <ion-chip class="ion-padding ion-margin-bottom" (click)="apriArticolo(item.link)">
+            Leggi l'articolo completo
           </ion-chip>
         </div>
       </ion-card> 
@@ -39,12 +39,13 @@
 
 <div id="leggi-articolo-container">
   <div class="button-container">
-    <ion-chip class="ion-margin-horizontal" outline color="primary">
+    <ion-chip class="ion-margin-horizontal" outline color="primary-contrast" (click)="chiudiArticolo()">
       <ion-icon name="close-circle"></ion-icon>
       <ion-label>Chiudi</ion-label>
     </ion-chip>
   </div>
   <ion-card id="iframe-container">
-    <iframe src="https://www.ilsole24ore.com/art/verso-via-libera-vaccino-la-fascia-5-11-anni-usa-emirati-arabi-dove-gia-si-vaccinano-bambini-AETk0Sv" frameborder="0"></iframe>
+    <!--<iframe [src]="articoloAperto" frameborder="0"></iframe>-->
+    <iframe src="https://www.ilsole24ore.com/art/coronavirus-ultime-notizie-italia-8-novembre-2021-AEL7rWv" frameborder="0"></iframe>
   </ion-card>
 </div>

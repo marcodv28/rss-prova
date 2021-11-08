@@ -15,6 +15,8 @@ SwiperCore.use([
   styleUrls: ['./slides.component.scss'],
 })
 export class SlidesComponent implements OnInit {
+  articoloAperto:string;
+
   mainConfig: SwiperOptions = {
     slidesPerView: 1,
     /*spaceBetween: 100,*/
@@ -41,6 +43,16 @@ export class SlidesComponent implements OnInit {
     const backgroundColor = this.randomColor();
     document.getElementById('swiper-container').style.backgroundColor = backgroundColor;
     console.log('background: ' + backgroundColor);
+  }
+
+  apriArticolo(url:string){
+    this.articoloAperto = url;
+    console.log('articolo aperto: \n' + this.articoloAperto);    
+    document.getElementById('leggi-articolo-container').style.display = 'flex';
+  }
+
+  chiudiArticolo(){
+    document.getElementById('leggi-articolo-container').style.display = 'none';
   }
 
   private randomColor() : string{
