@@ -45,7 +45,7 @@
     </ion-chip>
   </div>
   <ion-card id="iframe-container">
-    <!--<iframe [src]="articoloAperto" frameborder="0"></iframe>-->
-    <iframe src="https://www.ilsole24ore.com/art/coronavirus-ultime-notizie-italia-8-novembre-2021-AEL7rWv" frameborder="0"></iframe>
+    <iframe [src]="articoloAperto | safe" frameborder="0"></iframe>
+    <!--<iframe src="https://www.ilsole24ore.com/art/coronavirus-ultime-notizie-italia-8-novembre-2021-AEL7rWv" frameborder="0"></iframe>-->
   </ion-card>
 </div>
