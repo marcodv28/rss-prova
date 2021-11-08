@@ -1,10 +1,11 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
 //import Swiper core and required modules
-import SwiperCore, { SwiperOptions, Pagination} from 'swiper';
+import SwiperCore, { SwiperOptions, Pagination, EffectCards} from 'swiper';
 
 SwiperCore.use([
-  Pagination
+  Pagination,
+  EffectCards
 ]);
 
 @Component({
@@ -20,7 +21,8 @@ export class SlidesComponent implements OnInit {
     spaceBetween: 100,
     pagination: {
       dynamicBullets: true
-    }
+    },
+    effect: 'cards'
   }
 
   constructor() { }
