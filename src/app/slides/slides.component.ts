@@ -1,11 +1,12 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
 //import Swiper core and required modules
-import SwiperCore, { SwiperOptions, Pagination, EffectCards} from 'swiper';
+import SwiperCore, { SwiperOptions, Pagination, EffectCards, Autoplay} from 'swiper';
 
 SwiperCore.use([
   Pagination,
-  EffectCards
+  EffectCards,
+  Autoplay
 ]);
 
 @Component({
@@ -22,7 +23,11 @@ export class SlidesComponent implements OnInit {
     pagination: {
       dynamicBullets: true
     },
-    effect: 'cards'
+    effect: 'cards',
+    autoplay: {
+      delay: 8000,    //millisecondi
+      disableOnInteraction: false
+    }
   }
 
   constructor() { }
