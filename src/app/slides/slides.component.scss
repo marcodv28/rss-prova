@@ -13,6 +13,18 @@ swiper{
         height: 92%;
         display: flex;
         flex-direction: column;
+        ion-card-header{
+            ion-card-subtitle{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                ion-chip{
+                    ion-icon{
+                        margin: 0;
+                    }
+                }
+            }
+        }        
         ion-card-content{
             flex-grow: 1;
             overflow-y: scroll;
