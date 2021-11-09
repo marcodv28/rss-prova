@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
 import {RssService} from '../services/rss.service';
 import {NewsRss} from '../services/news-rss';
 import {IRssItem} from '../services/news-rss';
-//preferiti
-import { PreferitiService } from '../services/preferiti.service';
 
 @Component({
   selector: 'app-tab1',

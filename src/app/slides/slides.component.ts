@@ -3,6 +3,10 @@ import { Component, OnInit, Input } from '@angular/core';
 //import Swiper core and required modules
 import SwiperCore, { SwiperOptions, Pagination, EffectCards, Autoplay} from 'swiper';
 
+//preferiti
+import { PreferitiService } from '../services/preferiti.service';
+import { IRssItem } from '../services/news-rss';
+
 SwiperCore.use([
   Pagination,
   EffectCards
@@ -31,7 +35,7 @@ export class SlidesComponent implements OnInit {
     }*/
   }
 
-  constructor() { }
+  constructor(private preferiti:PreferitiService) { }
 
   @Input() items
 
@@ -54,6 +58,11 @@ export class SlidesComponent implements OnInit {
 
   chiudiArticolo(){
     document.getElementById('leggi-articolo-container').style.height = '0';
+  }
+
+  addPreferiti(articolo : IRssItem){
+    console.log('articolo da aggiungere ai preferiti: \n' + articolo.title);
+    this.preferiti.addPreferiti(articolo);
   }
 
   private randomColor() : string{

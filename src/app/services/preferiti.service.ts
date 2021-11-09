@@ -6,12 +6,16 @@ import { IRssItem } from './news-rss';
   providedIn: 'root'
 })
 export class PreferitiService {
-  preferiti:Array<IRssItem> = [];
+  private preferiti:Map<string, IRssItem> = new Map<string, IRssItem>();
 
   constructor() { }
 
   public addPreferiti(item:IRssItem){
-    this.preferiti.push(item);
-    console.log('preferiti: \n' + this.preferiti);
+    this.preferiti.set(item.link[0], item);
+    console.log('numero preferiti: \n' + this.preferiti.size);
+  }
+
+  public getPreferiti() : IterableIterator<IRssItem>{
+    return this.preferiti.values();
   }
 }
