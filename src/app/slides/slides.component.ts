@@ -60,10 +60,24 @@ export class SlidesComponent implements OnInit {
     document.getElementById('leggi-articolo-container').style.height = '0';
   }
 
-  addPreferiti(articolo : IRssItem){
-    console.log('articolo da aggiungere ai preferiti: \n' + articolo.title);
-    PreferitiService.addPreferiti(articolo);
-    document.getElementById('heart'+articolo.link).setAttribute('name', 'heart'); 
+  updatePreferiti(articolo : IRssItem){
+    if(PreferitiService.isPreferito(articolo)){     //rimuovi dai preferiti
+      console.log('articolo da rimuovere dai preferiti: \n' + articolo.title);    //aggiungi ai preferiti
+      PreferitiService.removePreferiti(articolo);
+    }else{
+      console.log('articolo da aggiungere ai preferiti: \n' + articolo.title);    //aggiungi ai preferiti
+      PreferitiService.addPreferiti(articolo);
+      //document.getElementById('heart'+articolo.link).setAttribute('name', 'heart'); 
+    }
+  }
+
+  setHeart(articolo:IRssItem) : string{
+    if(PreferitiService.isPreferito(articolo)){
+     return 'heart';
+    }else{
+      return 'heart-outline';
+    }
+
   }
 
 

@@ -14,7 +14,15 @@ export class PreferitiService {
     console.log('numero preferiti: \n' + PreferitiService.preferiti.size);
   }
 
+  public static removePreferiti(item:IRssItem){
+    PreferitiService.preferiti.delete(item.link[0]);
+  }
+
   public static getPreferiti() : IterableIterator<IRssItem>{
     return PreferitiService.preferiti.values();
+  }
+
+  public static isPreferito(item:IRssItem){
+    return this.preferiti.has(item.link[0]);
   }
 }
