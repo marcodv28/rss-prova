@@ -6,16 +6,15 @@ import { IRssItem } from './news-rss';
   providedIn: 'root'
 })
 export class PreferitiService {
-  private preferiti:Map<string, IRssItem> = new Map<string, IRssItem>();
+  public static preferiti:Map<string, IRssItem> = new Map<string, IRssItem>();
+  //public static preferitiList:IterableIterator<IRssItem> = PreferitiService.preferiti.values();
 
-  constructor() { }
-
-  public addPreferiti(item:IRssItem){
-    this.preferiti.set(item.link[0], item);
-    console.log('numero preferiti: \n' + this.preferiti.size);
+  public static addPreferiti(item:IRssItem){
+    PreferitiService.preferiti.set(item.link[0], item);
+    console.log('numero preferiti: \n' + PreferitiService.preferiti.size);
   }
 
-  public getPreferiti() : IterableIterator<IRssItem>{
-    return this.preferiti.values();
+  public static getPreferiti() : IterableIterator<IRssItem>{
+    return PreferitiService.preferiti.values();
   }
 }

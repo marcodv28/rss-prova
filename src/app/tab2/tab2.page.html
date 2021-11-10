@@ -13,5 +13,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ul *ngFor="let articolo of preferitiMap.values()">
+    <li >{{articolo.title}}</li>
+  </ul>
+
 </ion-content>

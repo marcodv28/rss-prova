@@ -35,7 +35,7 @@ export class SlidesComponent implements OnInit {
     }*/
   }
 
-  constructor(private preferiti:PreferitiService) { }
+  constructor() { }
 
   @Input() items
 
@@ -62,8 +62,9 @@ export class SlidesComponent implements OnInit {
 
   addPreferiti(articolo : IRssItem){
     console.log('articolo da aggiungere ai preferiti: \n' + articolo.title);
-    this.preferiti.addPreferiti(articolo);
+    PreferitiService.addPreferiti(articolo);
   }
+
 
   private randomColor() : string{
     return "rgb(" +
