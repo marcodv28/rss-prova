@@ -7,6 +7,9 @@ import SwiperCore, { SwiperOptions, Pagination, EffectCards, Autoplay} from 'swi
 import { PreferitiService } from '../services/preferiti.service';
 import { IRssItem } from '../services/news-rss';
 
+//toast
+import { ToastController } from '@ionic/angular';
+
 SwiperCore.use([
   Pagination,
   EffectCards
@@ -33,9 +36,9 @@ export class SlidesComponent implements OnInit {
       delay: 8000,    //millisecondi
       disableOnInteraction: true
     }*/
-  }
+  };
 
-  constructor() { }
+  constructor(public toastController:ToastController) { }
 
   @Input() items
 
@@ -64,10 +67,12 @@ export class SlidesComponent implements OnInit {
     if(PreferitiService.isPreferito(articolo)){     //rimuovi dai preferiti
       console.log('articolo da rimuovere dai preferiti: \n' + articolo.title);    //aggiungi ai preferiti
       PreferitiService.removePreferiti(articolo);
+      this.presentToast('Rimosso dai preferiti');
     }else{
       console.log('articolo da aggiungere ai preferiti: \n' + articolo.title);    //aggiungi ai preferiti
       PreferitiService.addPreferiti(articolo);
       //document.getElementById('heart'+articolo.link).setAttribute('name', 'heart'); 
+      this.presentToast('Aggiunto ai preferiti');
     }
   }
 
@@ -80,6 +85,14 @@ export class SlidesComponent implements OnInit {
 
   }
 
+  private async presentToast(msg:string){
+    const toast = await this.toastController.create({
+      message: msg,
+      duration:  1500,
+      position: 'top',
+    });
+    toast.present();
+  }
 
   private randomColor() : string{
     return "rgb(" +
