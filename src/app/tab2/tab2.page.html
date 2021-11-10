@@ -13,7 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ul *ngFor="let articolo of preferitiMap.values()">
+  <ul *ngFor="let articolo of getPreferiti()">
     <li >{{articolo.title}}</li>
   </ul>
 

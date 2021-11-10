@@ -9,5 +9,9 @@ import { PreferitiService } from '../services/preferiti.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page{
-  preferitiMap:Map<string, IRssItem> = PreferitiService.preferiti;
+  //preferitiMap:Map<string, IRssItem> = PreferitiService.preferiti;
+
+  getPreferiti() : IterableIterator<IRssItem>{
+    return PreferitiService.getPreferiti();
+  }
 }

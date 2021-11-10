@@ -6,7 +6,7 @@ import { IRssItem } from './news-rss';
   providedIn: 'root'
 })
 export class PreferitiService {
-  public static preferiti:Map<string, IRssItem> = new Map<string, IRssItem>();
+  private static preferiti:Map<string, IRssItem> = new Map<string, IRssItem>();
   //public static preferitiList:IterableIterator<IRssItem> = PreferitiService.preferiti.values();
 
   public static addPreferiti(item:IRssItem){
@@ -23,6 +23,7 @@ export class PreferitiService {
   }
 
   public static isPreferito(item:IRssItem){
+    console.log('PreferitiService.isPreferito function called ');
     return this.preferiti.has(item.link[0]);
   }
 }
