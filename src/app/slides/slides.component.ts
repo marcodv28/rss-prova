@@ -63,6 +63,7 @@ export class SlidesComponent implements OnInit {
   addPreferiti(articolo : IRssItem){
     console.log('articolo da aggiungere ai preferiti: \n' + articolo.title);
     PreferitiService.addPreferiti(articolo);
+    document.getElementById('heart'+articolo.link).setAttribute('name', 'heart'); 
   }
 
 
